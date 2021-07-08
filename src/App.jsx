@@ -14,7 +14,7 @@ class App extends React.Component {
 
     componentDidMount() {
         this.setState({
-            
+
             myChirps: [
                 ...this.state.myChirps,
                 { id: uuidv4(), username: 'MyNameIs21', chirp: 'Hi friends! Wuts up?' },
@@ -32,7 +32,7 @@ class App extends React.Component {
         this.setState({
             username: '',
             chirp: '',
-            myChirps: [...this.state.myChirps,  { id: uuidv4(), username: this.state.username, chirp: this.state.chirp }]
+            myChirps: [...this.state.myChirps, { id: uuidv4(), username: this.state.username, chirp: this.state.chirp }]
         });
     }
 
@@ -51,10 +51,8 @@ class App extends React.Component {
                                 aria-describedby="basic-addon1"
                                 value={this.state.username}
                                 onChange={e => this.setState({ username: e.target.value })}
-                                />
+                            />
                         </div>
-                        
-
                         <form className="form-group shadow bg-body rounded">
                             <textarea
                                 placeholder="My chirp..."
@@ -63,35 +61,30 @@ class App extends React.Component {
                                 className="form-control"
                             />
                         </form>
-
-                            <button onClick={e => this.handleSubmit(e)} className="btn-lg btn-primary shadow mt-3">
-                                Chirp!
-                            </button>
-
+                        <button onClick={e => this.handleSubmit(e)} className="btn-lg btn-primary shadow mt-3">
+                            Chirp!
+                        </button>
                     </div>
                 </section>
                 <br />
                 <section className="row justify-content-center mt-3">
                     <div className="col-md-6 font-monospace">
                         <label className="display-6 mb-3">Timeline</label>
-                        
-                    
                         <ul className="list-group shadow bg-body rounded">
                             {this.state.myChirps.map(myChirp => (
                                 <li className="list-group-item" key={`myChirps-chirp-${myChirp.id}`}>
                                     <span className="fw-bold fs-5 text-primary">@{myChirp.username}: </span>
                                     {myChirp.chirp}
                                 </li>
-                                
                             ))}
                         </ul>
                     </div>
                 </section>
-                    <br />
-                    <br />         
+                <br />
+                <br />
             </main>
 
-        );
+        )
     }
 }
 

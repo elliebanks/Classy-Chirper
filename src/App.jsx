@@ -43,7 +43,6 @@ class App extends React.Component {
                 <section className="row justify-content-center mt-5">
                     <div className="col-md-6 mt-3 font-monospace">
                         <label className="display-6">Chirper</label>
-
                         <div className="input-group shadow bg-body rounded mt-3 mb-3">
                             <span className="input-group-text" id="basic-addon1">@</span>
                             <input
